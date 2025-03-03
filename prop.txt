@@ -1,0 +1,28 @@
+# --- CẤU HÌNH CHUNG ---
+# Danh sách các thư mục chứa artifact, cách nhau bằng dấu phẩy
+repo_dirs=/Users/nguyenbahoanganh/PVcom/python-code/upload-to-mirror-python/
+
+# Loại artifact cần upload: maven hoặc raw
+artifact_type=raw
+
+# URL của mirror (repository trên Nexus)
+# Với maven: URL của repository Maven (ví dụ: http://nexus.example.com/repository/maven-releases)
+# Với raw: URL của repository Raw (ví dụ: http://nexus.example.com/repository/raw-mirror)
+destination=http://localhost:8081/repository/anhnbh-raw-hosted/
+
+# --- CẤU HÌNH CHO UPLOAD MAVEN ---
+# Nếu artifact_type là maven, cung cấp các thông số dưới đây.
+# Nếu upload nhiều artifact, artifactId sẽ được lấy từ tên file POM (không có phần mở rộng)
+# groupId=com.example
+# version=1.0.0
+# repoID tương ứng với <id> trong ~/.m2/settings.xml (nếu Nexus yêu cầu xác thực)
+# repoID=internal-mirror
+
+# --- CẤU HÌNH CHO UPLOAD RAW ---
+# Nếu artifact_type là raw (hoặc các loại file khác như jar, war, zip, ant, ...),
+# có thể cấu hình thêm:
+# Pattern để quét file (mặc định là tất cả file)
+file_pattern=*
+# Nếu Nexus raw yêu cầu xác thực, khai báo username và password (nếu không cần, để trống)
+username=user-name
+password=password
